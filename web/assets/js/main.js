@@ -57,6 +57,19 @@ Main.prototype.form = function() {
         }
     });
 
+    toggle.filter('.xhprof').state({
+        text: {
+            active: 'Enabled',
+            inactive: 'Disabled'
+        },
+        onActivate: function() {
+            $('input#xhprof').val(1);
+        },
+        onDeactivate: function() {
+            $('input#xhprof').val(0);
+        }
+    });
+
     buttons.filter('.phpversion').on('click', function(){
         $(this)
             .addClass('active')

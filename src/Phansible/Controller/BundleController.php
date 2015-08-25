@@ -45,6 +45,9 @@ class BundleController extends Controller
         $app['roles']->setupRole($requestVars, $vagrantBundle);
         $playbook->addRole('app');
 
+//        var_dump($requestVars, $vagrantBundle, $playbook);
+//        exit();
+
         $zipPath = tempnam(sys_get_temp_dir(), "phansible_bundle_");
 
         if ($vagrantBundle->generateBundle(
